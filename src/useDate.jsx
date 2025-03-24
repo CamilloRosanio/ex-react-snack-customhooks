@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 
 // DICHIARAZIONE CUSTOM-HOOK
-export default function useDate(initialValue = false) {
+export default function useDate() {
 
     const [currentDate, setCurrentDate] = useState(new Date());
 

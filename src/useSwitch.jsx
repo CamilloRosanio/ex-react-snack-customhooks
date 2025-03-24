@@ -37,7 +37,21 @@ export default function useSwitch(initialValue = false) {
 
     // Nel RETURN specifico l'array di elementi di questo CUSTOM-HOOK che voglio restituire.
     // Li potrò usare nel componente in cui li importo tramite DESTRUCTURING se voglio.
-    return [isOn, toggle]
+    return [isOn, toggle];
+
+    /*
+    NOTA FONDAMENTALE
+    
+    ***** ARRAY *****
+    in questo caso sto esportando un ARRAY con dentro i miei valori/funzioni.
+    Se utilizzo un ARRAY, nel DESTRUCTURING sul COMPONENT posso cambiare anche nome a queste variabili,
+    perchè tanto viene considerato il loro INDEX (vedi esempio nel COMPONENT).
+
+    ***** OBJECT *****
+    Se passo questi valori in un OBJECT, invece non posso cambiare il loro nome nel COMPONENT, perchè
+    in questo caso devo utilizzarli richiamandoli col nome della loro KEY.
+
+    */
 
 }
 

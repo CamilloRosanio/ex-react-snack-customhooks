@@ -1,5 +1,6 @@
-// IMPORT CUSTOM-HOOK - useSwitch
+// IMPORT CUSTOM-HOOKS
 import useSwitch from "./useSwitch";
+import useDate from "./useDate";
 
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
   const [isOn, toggle] = useSwitch();
   // Esempio con cambio nome delle variabili destrutturate:
   // const [isAltroNome, isAltroToggle] = useSwitch();
+
+  const currentDate = useDate();
 
   return (
     <>
@@ -28,6 +31,13 @@ function App() {
 
         {/* Nel bottone invece sto passando la funzione "toggle" da utilizzare al click */}
         {/* <button onClick={isAltroToggle}>Cambia Stato</button> */}
+      </div>
+
+
+      <div>
+        <h2>Data e ora attuali:</h2>
+
+        <p>{currentDate.toLocaleString()}</p>
       </div>
     </>
   )

@@ -2,6 +2,7 @@
 import useSwitch from "./useSwitch";
 import useDate from "./useDate";
 import useCustomPointer from "./useCustomPointer";
+import useKeyPress from "./useKeyPress";
 
 
 function App() {
@@ -13,12 +14,14 @@ function App() {
 
   const currentDate = useDate();
 
-  const customPointer = useCustomPointer(<span>🚀</span>);
+  // const customPointer = useCustomPointer(<span>🚀</span>);
+
+  const isEnterPressed = useKeyPress("Enter");
 
   return (
     <>
       {/* ESEMPIO CON NOMI VARIABILI IDENTICI */}
-      <div>
+      <div className="debug">
         {/* Nel titolo sto usando il VALUE reattivo del mio hook personalizzato */}
         <h1>Il valore è: {isOn ? 'ON' : 'OFF'}</h1>
 
@@ -28,7 +31,7 @@ function App() {
 
 
       {/* ESEMPIO CON NOMI VARIABILI CAMBIATI*/}
-      <div>
+      <div className="debug">
         {/* Nel titolo sto usando il VALUE reattivo del mio hook personalizzato */}
         {/* <h1>Il valore è: {isAltroNome ? 'ON' : 'OFF'}</h1> */}
 
@@ -38,7 +41,7 @@ function App() {
 
 
       {/* SNACK 2 */}
-      <div>
+      <div className="debug">
         <h2>Data e ora attuali:</h2>
 
         <p>{currentDate.toLocaleString()}</p>
@@ -46,9 +49,16 @@ function App() {
 
 
       {/* SNACK 3 */}
-      <div>
+      {/* <div className="debug">
         <h2>Sposta il mouse per vedere il cursore personalizzato!</h2>
         {customPointer}
+      </div> */}
+
+
+      {/* BONUS */}
+      <div className="debug">
+        <h2>Tieni premuto Enter per testare il custom hook</h2>
+        <p>{isEnterPressed ? '✅ Enter premuto!' : 'Aspettando input...'}</p>
       </div>
     </>
   )

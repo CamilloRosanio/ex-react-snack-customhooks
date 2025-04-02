@@ -10,7 +10,7 @@ function App() {
   // Qui dichiaro all'interno del COMPONENT gli elementi del mio hook che voglio utilizzare.
   const [isOn, toggle] = useSwitch();
   // Esempio con cambio nome delle variabili destrutturate:
-  // const [isAltroNome, isAltroToggle] = useSwitch();
+  const [isAltroNome, isAltroToggle] = useSwitch();
 
   const currentDate = useDate();
 
@@ -23,7 +23,7 @@ function App() {
       {/* ESEMPIO CON NOMI VARIABILI IDENTICI */}
       <div className="debug">
         {/* Nel titolo sto usando il VALUE reattivo del mio hook personalizzato */}
-        <h1>Il valore è: {isOn ? 'ON' : 'OFF'}</h1>
+        <h1>Il valore del Toggle 1 è: {isOn ? 'ON' : 'OFF'}</h1>
 
         {/* Nel bottone invece sto passando la funzione "toggle" da utilizzare al click */}
         <button onClick={toggle}>Cambia Stato</button>
@@ -33,10 +33,10 @@ function App() {
       {/* ESEMPIO CON NOMI VARIABILI CAMBIATI*/}
       <div className="debug">
         {/* Nel titolo sto usando il VALUE reattivo del mio hook personalizzato */}
-        {/* <h1>Il valore è: {isAltroNome ? 'ON' : 'OFF'}</h1> */}
+        <h1>Il valore del Toggle 2 è: {isAltroNome ? 'ON2' : 'OFF2'}</h1>
 
         {/* Nel bottone invece sto passando la funzione "toggle" da utilizzare al click */}
-        {/* <button onClick={isAltroToggle}>Cambia Stato</button> */}
+        <button onClick={isAltroToggle}>Cambia Stato</button>
       </div>
 
 
